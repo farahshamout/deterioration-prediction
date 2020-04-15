@@ -27,7 +27,7 @@ calculate_ews.py - this scripts calculates the threshold based EWS scores for th
 
 
 
-## Acknowledgements 
+## Acknowledgements 
 
 Thanks to my supervisors Prof. David Clifton and Dr. Tingting Zhu and clinical collaborator Dr. Peter Watkinson.
 
