@@ -1,12 +1,8 @@
-## Detection of In-hospital Deterioration on Hospital Wards
+## Machine Learning for the Detection of In-hospital Deterioration on Hospital Wards
 
 
 
-This repository includes code from Shamout's DPhil titled "Machine Learning for the Detection of Clinical Deterioration on Hospital Wards". 
-
-
-
-*Note that this repository will be constantly updated and is not final yet...*
+This repository includes code from Farah Shamout's DPhil titled "Machine Learning for the Detection of Clinical Deterioration on Hospital Wards" completed at the University of Oxford. 
 
 
 
@@ -24,6 +20,10 @@ Steps to run the code:
 - navigate to the score of interest and run its respective scripts 
 
 calculate_ews.py - this scripts calculates the threshold based EWS scores for the dummy dataset based on the score of interest, e.g. NEWS, MCEWS, or CEWS 
+
+
+
+*Note that this repository will be constantly updated and is not final yet...*
 
 
 
