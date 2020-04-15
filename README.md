@@ -16,16 +16,15 @@ The work involves three types of models:
 
 Steps to run the code:
 
-- create_dummy_dataset.py - this script generates a dummy dataset of the most routinely collected vital signs (HR, SBP, SPO2, TEMP, AVPU, & masktype). masktype indicates the provision of supplemental oxygen
-- navigate to the score of interest and run its respective scripts 
+- create_dummy_dataset.py in datasets folder- this script generates a dummy dataset of the most routinely collected vital signs (HR, SBP, SPO2, TEMP, AVPU, & masktype). masktype indicates the provision of supplemental oxygen
 
-calculate_ews.py - this scripts calculates the threshold based EWS scores for the dummy dataset based on the score of interest, e.g. NEWS, MCEWS, or CEWS 
+- navigate to the score of interest and run its respective scripts
 
-
+  
 
 *Note that this repository will be constantly updated and is not final yet...*
 
-
+Please cite: [coming soon]
 
 ## Acknowledgements 
 

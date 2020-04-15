@@ -9,9 +9,9 @@ seed(1)
 
 
 # Create dummy pandas dataframe to calculate EWS
-distributions = {'HR':[60,5], 'RR':[17,4], 'SBP':[100, 40], 'TEMP':[36.5,0.7],'SPO2':[95,5],'AVPU':[1,2,3,4], 'masktype':[0,1]}
+distributions = {'HR':[60,5], 'RR':[17,4], 'SBP':[100, 40], 'TEMP':[36.5,0.7],'SPO2':[95,5],'avpu':[1,2,3,4], 'masktype':[0,1]}
 cont_var = ['HR', 'RR', 'SBP', 'TEMP', 'SPO2']
-cat_var =['AVPU', 'masktype']
+cat_var =['avpu', 'masktype']
 
 
 num_patients = 10
@@ -31,4 +31,4 @@ for var in cat_var:
 
 df = pd.DataFrame(data).sort_values('hadm_id').reset_index(drop=True)
 
-df.to_csv('dummy_obs.csv')
+df.to_csv('dummy_obs.csv', index=False)

@@ -28,23 +28,24 @@ def calculate_ews(EWS, df, label='Score', name='', train_cols=[]):
             train_cols = ['HR', 'RR', 'TEMP', 'SPO2', 'SBP']
         else:
             train_cols = ['HR', 'RR', 'TEMP', 'SPO2', 'SBP', 'masktype', 'avpu']
-
+    temp_df = pd.DataFrame()
     # loop over each component, and map score
     for x in train_cols:
-        df[label + '_' + x] = pd.cut(df[x],
+        temp_df[label + '_' + x] = pd.cut(df[x],
                                   bins=[-1] + EWS[['MIN', 'MAX']][EWS.VAR == x].stack()[1::2].tolist(), 
                                      labels=EWS.SCORE[EWS.VAR == x].tolist(), right=True).str.replace('X', '').astype('float')
 
     # define columns to be added
-    score_cols = [col for col in df if col.startswith(label + '_')]
+    score_cols = [col for col in temp_df if col.startswith(label + '_')]
     
     # calculate final score (don't forget to use the absolute value)
-    df[label] = np.absolute(df[score_cols]).sum(axis=1)
+    df[label] = np.absolute(temp_df[score_cols]).sum(axis=1)
     
     if len(train_cols)==1:
         return df
     else:
-        return df[['hrs_to_firstevent', 'EWS', 'age', 'gender']]
+        #return df 
+        return df[[label]]
 
 
 def calculate_asews( dataset_eval, asews, train_cols=[]):
@@ -67,7 +68,8 @@ def calculate_asews( dataset_eval, asews, train_cols=[]):
                 asews_obs = scored_obs
     asews_obs['index'] = asews_obs.index
     asews_obs = asews_obs.sort_values(by=['index'])
-    return asews_obs[['hrs_to_firstevent', 'EWS', 'age', 'gender']]
+    return asews_obs[['EWS']]   
+ #return asews_obs[['hrs_to_firstevent', 'EWS', 'age', 'gender']]
 
 
 def calculate_aews(asews, dataset_eval, name):
@@ -90,8 +92,8 @@ def calculate_aews(asews, dataset_eval, name):
             asews_obs=asews_obs.append(scored_obs, ignore_index=True)
         else: 
             asews_obs = scored_obs
-
-    return asews_obs[['hrs_to_firstevent', 'EWS', 'age', 'gender']]
+    return asews_obs[['EWS']]
+    #return asews_obs[['hrs_to_firstevent', 'EWS', 'age', 'gender']]
 
 
 ## classes of ews thresholds
