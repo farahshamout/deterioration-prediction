@@ -4,3 +4,6 @@ If you use this code, please refer to the license and cite:
 
 
 Shamout, F. E., Zhu, T., Sharma, P., Watkinson, P. J., & Clifton, D. A. (2019). Deep interpretable early warning system for the detection of clinical deterioration. IEEE journal of biomedical and health informatics, 24(2), 437-446.
+
+
+To load the trained model, simply run the notebook load_DEWS.ipynb
